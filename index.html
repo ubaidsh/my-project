@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quereshi Shoes Showroom – School, Wedding, Formal &amp; Sports Shoes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#10131a;--paper:#fff;--soft:#f3f5f9;--blue:#2748ff;--sun:#ffd23f;--muted:#5f6675;--line:#e4e7ee;
+--head:'Bricolage Grotesque',Georgia,serif;--body:'Instrument Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);line-height:1.05}
+.shoe{--upper:#fff;--accent:#2748ff;--sole:#10131a;--mid:#fff;width:100%;height:auto;display:block}
+
+header.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
+.logo{font:800 1.6rem var(--head);letter-spacing:-.02em}
+.nav ul{display:flex;gap:30px;list-style:none;font-weight:600;font-size:.95rem}
+.nav ul a:hover{color:var(--blue)}
+.cart{background:var(--ink);color:#fff;border-radius:999px;padding:9px 18px;font-weight:600;font-size:.9rem}
+
+.hero{background:linear-gradient(135deg,#eef1ff 0%,#dfe6ff 100%);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:30px;padding-top:64px;padding-bottom:64px}
+.hero h1{font-size:clamp(2.8rem,6.5vw,5.2rem);font-weight:800;letter-spacing:-.035em}
+.hero p{margin:20px 0 30px;max-width:42ch;color:var(--muted);font-size:1.1rem}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--blue);color:#fff;font-weight:600;padding:15px 30px;border-radius:999px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.stats{display:flex;gap:34px;margin-top:38px}
+.stats b{display:block;font:800 1.7rem var(--head)}
+.stats span{color:var(--muted);font-size:.9rem}
+.stage{position:relative}
+.stage::before{content:"";position:absolute;inset:6% 4% 0;border-radius:50%;background:radial-gradient(circle,#fff 0%,rgba(255,255,255,0) 70%)}
+.stage .shoe{position:relative;transform:rotate(-8deg);filter:drop-shadow(0 28px 22px rgba(20,30,80,.25))}
+.tag{position:absolute;right:2%;top:6%;background:var(--sun);border-radius:16px;padding:10px 16px;font-weight:600;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.tag b{font:800 1.3rem var(--head);display:block}
+
+.perks{border-bottom:1px solid var(--line)}
+.perks .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;padding-top:26px;padding-bottom:26px}
+.perks p{font-weight:600;font-size:.95rem}.perks span{display:block;color:var(--muted);font-weight:400}
+
+section{padding:84px 0}
+.head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:20px;margin-bottom:36px}
+.head h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.02em}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{font:600 .92rem var(--body);padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:26px}
+.card{border:1px solid var(--line);border-radius:22px;padding:14px;background:#fff;transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:0 18px 40px rgba(16,19,26,.10);transform:translateY(-4px)}
+.pic{position:relative;border-radius:16px;padding:34px 18px 22px;background:radial-gradient(circle at 50% 55%,#fff 0%,var(--soft) 75%)}
+.pic img{width:100%;height:auto;object-fit:contain;display:block}
+.badge{position:absolute;left:12px;top:12px;background:var(--ink);color:#fff;font-size:.78rem;font-weight:600;padding:4px 12px;border-radius:999px}
+.badge.sale{background:#e5484d}
+.info{padding:14px 6px 6px}
+.info h3{font-size:1.2rem}
+.meta{color:var(--muted);font-size:.9rem}
+.stars{color:#f5a524;font-size:.9rem;letter-spacing:2px;margin-top:4px}
+.stars small{color:var(--muted);letter-spacing:0;margin-left:4px}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.price{font:800 1.2rem var(--head)}
+.price s{color:var(--muted);font:400 .9rem var(--body);margin-left:6px}
+.add{font:600 .88rem var(--body);background:var(--ink);color:#fff;border:0;border-radius:999px;padding:9px 18px;cursor:pointer}
+.add:hover{background:var(--blue)}
+.hidden{display:none}
+
+.promo{background:var(--ink);color:#fff;border-radius:28px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:20px;padding:50px 56px;overflow:hidden}
+.promo h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:800}
+.promo p{margin:14px 0 26px;color:#c7ccd8;max-width:36ch}
+.promo .btn{background:var(--sun);color:var(--ink)}
+.promo .shoe{transform:rotate(-10deg);filter:drop-shadow(0 24px 20px rgba(0,0,0,.4))}
+
+.reviews{background:var(--soft)}
+.rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:34px}
+.rgrid blockquote{background:#fff;border-radius:20px;padding:26px}
+.rgrid p{margin:10px 0 14px}.rgrid cite{font-style:normal;font-weight:600}
+
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.contact h2{font-size:clamp(2rem,4vw,3rem);font-weight:800}
+.contact p{margin-top:14px;color:var(--muted);max-width:40ch}
+.contact form{display:grid;gap:14px}
+.contact input,.contact textarea{font:inherit;padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;width:100%;background:var(--soft)}
+.contact button{font:600 1rem var(--body);background:var(--blue);color:#fff;border:0;border-radius:999px;padding:14px;cursor:pointer}
+footer{background:var(--ink);color:#c7ccd8;padding:48px 0 28px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer h4{color:#fff;margin-bottom:10px}footer li{list-style:none;margin:6px 0}
+footer .end{margin-top:34px;padding-top:18px;border-top:1px solid #2a2f3a;font-size:.9rem}
+
+@media(max-width:800px){
+ .hero .wrap,.promo,.contact .wrap{grid-template-columns:1fr}
+ .promo{padding:34px 26px}.nav ul{display:none}
+ footer .cols{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.add{display:inline-block;text-decoration:none}
+.wafloat{position:fixed;right:18px;bottom:18px;z-index:20;display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:6px 6px 6px 18px;box-shadow:0 8px 28px rgba(0,0,0,.2);font-weight:600;font-size:.95rem}
+.wafloat svg{background:#25d366;border-radius:50%;padding:11px;width:52px;height:52px}
+.wafloat:hover{transform:translateY(-2px)}
+@media(max-width:520px){.wafloat span{display:none}.wafloat{padding:5px}}
+</style>
+</head>
+<body>
+
+<!-- Realistic sneaker illustration. To use real photos, replace any <svg class="shoe">…</svg> with <img src="images/your-photo.png" alt="..."> -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+ <linearGradient id="hl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".38"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient>
+ <linearGradient id="ms" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
+ <radialGradient id="fl"><stop offset="0" stop-color="#000" stop-opacity=".3"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+ <pattern id="scale" width="14" height="12" patternUnits="userSpaceOnUse"><path d="M0 6 Q7 0 14 6 Q7 12 0 6Z" fill="none" stroke="#000" stroke-opacity=".55" stroke-width="1.3"/><path d="M0 6 Q7 0 14 6" fill="none" stroke="#fff" stroke-opacity=".16" stroke-width="1"/></pattern>
+ <symbol id="shoe" viewBox="0 0 500 290">
+  <ellipse cx="250" cy="262" rx="220" ry="14" fill="url(#fl)"/>
+  <!-- upper -->
+  <path id="up" d="M50 208 L46 142 C46 120 58 107 78 103 L118 97 C134 96 142 105 152 113 C170 116 200 102 232 106 C292 114 340 140 402 158 C440 170 462 186 462 208 Z" fill="var(--upper)"/>
+  <!-- overlays -->
+  <path d="M50 208 L46 142 C46 120 58 107 78 103 L104 99 C97 135 97 175 104 208 Z" fill="var(--accent)"/>
+  <path d="M372 150 C432 166 462 186 462 208 L362 208 C364 184 368 166 372 150 Z" fill="var(--accent)"/>
+  <path d="M122 206 C176 172 240 146 336 138 C262 166 204 190 160 208 Z" fill="var(--accent)"/>
+  <!-- collar + tongue -->
+  <path d="M78 103 L118 97 C134 96 142 105 152 113 L140 121 C126 114 108 110 74 116 Z" fill="#1a1d24"/>
+  <path d="M150 113 C152 84 186 70 218 84 L234 108 C204 100 172 110 150 113 Z" fill="var(--upper)"/>
+  <path d="M150 113 C152 84 186 70 218 84 L234 108 C204 100 172 110 150 113 Z" fill="url(#hl)"/>
+  <path d="M50 208 L46 142 C46 120 58 107 78 103 L118 97 C134 96 142 105 152 113 C170 116 200 102 232 106 C292 114 340 140 402 158 C440 170 462 186 462 208 Z" fill="url(#hl)"/>
+  <!-- laces -->
+  <g stroke="#000" stroke-opacity=".25" stroke-width="9" stroke-linecap="round"><path d="M192 102 L180 130M222 106 L210 134M252 112 L240 140M282 120 L270 148M312 130 L300 156"/></g>
+  <g stroke="#fff" stroke-width="6" stroke-linecap="round"><path d="M192 100 L180 128M222 104 L210 132M252 110 L240 138M282 118 L270 146M312 128 L300 154"/></g>
+  <!-- stitching -->
+  <g fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="2" stroke-dasharray="5 5"><path d="M104 104 C97 140 97 175 104 204"/><path d="M372 154 C366 172 364 188 362 204"/></g>
+  <!-- midsole + outsole -->
+  <path d="M42 208 H466 C468 226 458 240 436 240 H72 C52 240 40 228 42 208 Z" fill="var(--mid)"/>
+  <path d="M42 208 H466 C468 226 458 240 436 240 H72 C52 240 40 228 42 208 Z" fill="url(#ms)"/>
+  <path d="M60 238 H448 C444 250 434 254 420 254 H84 C70 254 62 248 60 238 Z" fill="var(--sole)"/>
+  <path d="M60 222 H450" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+ </symbol>
+
+ <symbol id="dress" viewBox="0 0 500 290">
+  <ellipse cx="250" cy="256" rx="220" ry="13" fill="url(#fl)"/>
+  <path d="M54 214 L52 152 C52 134 62 124 80 122 L130 119 C148 118 158 128 172 134 C215 142 260 140 300 150 C360 164 420 182 450 198 C468 207 468 216 456 220 L54 220 Z" fill="var(--upper)"/>
+  <path d="M54 214 L52 152 C52 134 62 124 80 122 L130 119 C148 118 158 128 172 134 C215 142 260 140 300 150 C360 164 420 182 450 198 C468 207 468 216 456 220 L54 220 Z" fill="url(#hl)"/>
+  <path d="M54 214 L52 152 C52 134 62 124 80 122 L130 119 C148 118 158 128 172 134 C215 142 260 140 300 150 C360 164 420 182 450 198 C468 207 468 216 456 220 L54 220 Z" fill="url(#scale)" style="opacity:var(--tex,0)"/>
+  <path d="M200 144 C262 144 334 162 404 186" fill="none" stroke="#fff" stroke-opacity=".4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M80 122 L130 119 C148 118 158 128 172 134 L160 141 C145 135 120 133 78 139 Z" fill="#14161b"/>
+  <path d="M188 138 L198 160M214 141 L224 163M240 144 L250 166M266 147 L276 169" stroke="var(--accent)" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M364 166 C376 182 378 200 374 218" fill="none" stroke="#000" stroke-opacity=".3" stroke-width="3"/>
+  <path d="M104 126 C96 160 96 196 102 216" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="2" stroke-dasharray="5 5"/>
+  <path d="M52 218 H464 C468 227 458 233 446 233 H70 C58 233 50 227 52 218 Z" fill="var(--sole)"/>
+  <path d="M56 230 H124 V244 H60 Z" fill="var(--sole)"/>
+  <path d="M60 224 H450" stroke="var(--gold,#888)" stroke-width="2" opacity=".8"/>
+ </symbol>
+
+ <symbol id="loafer" viewBox="0 0 500 290">
+  <ellipse cx="250" cy="256" rx="220" ry="13" fill="url(#fl)"/>
+  <path id="lf" d="M54 214 L52 160 C52 142 62 132 80 130 L130 127 C148 126 160 134 176 140 C220 146 262 146 300 156 C360 170 420 186 450 200 C468 208 468 218 456 222 L54 222 Z" fill="var(--upper)"/>
+  <path d="M54 214 L52 160 C52 142 62 132 80 130 L130 127 C148 126 160 134 176 140 C220 146 262 146 300 156 C360 170 420 186 450 200 C468 208 468 218 456 222 L54 222 Z" fill="url(#hl)"/>
+  <path d="M80 130 L130 127 C148 126 160 134 176 140 L164 147 C148 142 120 140 78 146 Z" fill="#14161b"/>
+  <path d="M232 148 L282 156 L292 204 L244 206 Z" fill="#000" fill-opacity=".28"/>
+  <rect x="236" y="160" width="46" height="28" rx="5" fill="none" stroke="var(--gold,#d4af37)" stroke-width="6" transform="rotate(8 259 174)"/>
+  <path d="M259 160 L265 190" stroke="var(--gold,#d4af37)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M200 148 C262 150 334 168 404 190" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="6" stroke-linecap="round"/>
+  <path d="M54 220 H464 C468 229 458 235 446 235 H70 C58 235 50 229 54 220 Z" fill="var(--sole)"/>
+  <path d="M58 232 H126 V246 H62 Z" fill="var(--sole)"/>
+ </symbol>
+</defs>
+</svg>
+
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#">Quereshi <span style="font-weight:500;font-size:.85rem;color:var(--muted)">Shoes Showroom</span></a>
+  <ul><li><a href="#shop">Shop</a></li><li><a href="#sale">Sale</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li></ul>
+  <a class="cart" id="navwa" target="_blank" rel="noopener" href="#contact">Order now</a>
+</div></header>
+
+<section class="hero" style="padding:0"><div class="wrap">
+  <div>
+    <h1>Jootay har mauqe ke liye.</h1>
+    <p>Black school shoes, wedding shoes, formal, sports and sneakers. Strong build, soft sole and fair showroom prices.</p>
+    <div class="btns"><a class="btn" href="#shop">Shop shoes</a><a class="btn alt" href="#sale">View sale</a></div>
+    <div class="stats"><div><b>5,000+</b><span>Happy customers</span></div><div><b>4.8/5</b><span>Average rating</span></div><div><b>7 days</b><span>Easy exchange</span></div></div>
+  </div>
+  <div class="stage">
+    <svg class="shoe" style="--upper:#f5f6f8;--accent:#2748ff;--sole:#10131a" role="img" aria-label="Quereshi Street Runner sneaker"><use href="#shoe"/></svg>
+    <div class="tag">Street Runner<b>Rs 6,500</b></div>
+  </div>
+</div></section>
+
+<div class="perks"><div class="wrap">
+  <p>Free delivery<span>On orders above Rs 10,000</span></p>
+  <p>Cash on delivery<span>Pay when shoes arrive</span></p>
+  <p>7-day exchange<span>Wrong size? We swap it</span></p>
+  <p>Original quality<span>Checked before dispatch</span></p>
+</div></div>
+
+<section id="shop"><div class="wrap">
+  <div class="head"><h2>Our shoes</h2>
+    <div class="filters" role="group" aria-label="Filter shoes">
+      <button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="Sneakers">Sneakers</button><button aria-pressed="false" data-f="Sports">Sports</button><button aria-pressed="false" data-f="School">School</button><button aria-pressed="false" data-f="Formal">Formal</button><button aria-pressed="false" data-f="Wedding">Wedding</button>
+    </div></div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section id="sale" style="padding-top:0"><div class="wrap">
+  <div class="promo">
+    <div><h2>School and wedding season.</h2><p>Black school shoes from Rs 2,900. Full wedding collection now in stock, plus up to 30% off selected sneakers.</p><a class="btn" href="#contact">Order now</a></div>
+    <svg class="shoe" style="--upper:#ffd23f;--accent:#10131a;--sole:#10131a" role="img" aria-label="Yellow sneaker"><use href="#shoe"/></svg>
+  </div>
+</div></section>
+
+<section class="reviews" id="reviews"><div class="wrap">
+  <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800">What customers say</h2>
+  <div class="rgrid">
+    <blockquote><div class="stars">★★★★★</div><p>Very comfortable, I wear them all day at work. Size was exactly right.</p><cite>Ahmed R., Karachi</cite></blockquote>
+    <blockquote><div class="stars">★★★★★</div><p>Delivery took 2 days and the quality is better than the photos.</p><cite>Sana K., Lahore</cite></blockquote>
+    <blockquote><div class="stars">★★★★☆</div><p>Good grip for running. Exchange was easy when I needed a bigger size.</p><cite>Usman T., Islamabad</cite></blockquote>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <div><h2>Place an order</h2><p>Write your name, phone number and the shoes you want. Your message opens in WhatsApp so we can chat directly.</p></div>
+  <form id="f">
+    <input type="text" placeholder="Your name" aria-label="Your name" required>
+    <input type="tel" placeholder="Phone number" aria-label="Phone number" required>
+    <textarea rows="4" placeholder="Which shoes and what size?" aria-label="Message" required></textarea>
+    <button type="submit">Send on WhatsApp</button>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><div class="logo" style="color:#fff">Quereshi Shoes Showroom</div><p style="margin-top:8px;max-width:34ch">Shoes for work, sport and every day. Made to last.</p></div>
+    <div><h4>Shop</h4><ul><li>School shoes</li><li>Wedding shoes</li><li>Formal</li><li>Sports &amp; sneakers</li></ul></div>
+    <div><h4>Help</h4><ul><li>Delivery</li><li>Exchange</li><li>Contact</li></ul></div>
+  </div>
+  <div class="end">© 2026 Quereshi Shoes Showroom. Karachi, Pakistan.</div>
+</div></footer>
+
+<a class="wafloat" id="wafloat" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><span>Chat with us</span>
+<svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2z" fill="none" stroke="#fff" stroke-width="1.8"/><path fill="#fff" d="M16.6 14.2c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.8-.4-1.6-.8-2.3-1.5-.6-.5-1-1.2-1.4-1.9-.1-.3 0-.4.2-.6l.4-.5c.1-.2.2-.3.2-.5s0-.3-.1-.5c-.1-.1-.6-1.5-.8-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.7.7-1 1.5-1 2.4.1 1 .5 2 1.1 2.8 1.3 1.9 2.9 3.4 5 4.3.7.3 1.4.5 2.1.6.8.1 1.5 0 2.1-.4.6-.4 1-1 1.1-1.6.1-.2.1-.4 0-.5-.1-.1-.2-.2-.4-.3z"/></svg></a>
+<script>
+const WA_NUMBER="92XXXXXXXXXX"; // apna WhatsApp number yahan likhein, bina + ke. Example: 923001234567
+const wa=t=>`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t)}`;
+const shoes=[
+ {n:"Horsebit Loafer Maroon",c:"Wedding",col:"Maroon leather, gold buckle",p:7500,o:10000,r:4.9,rv:58,b:"Sale",sym:"loafer",s:"--upper:#5a1f26;--gold:#d4af37;--sole:#1a0d0f"},
+ {n:"Croc Leather Wedding Shoe",c:"Wedding",col:"Black croc texture",p:9500,o:12000,r:4.9,rv:47,b:"Sale",sym:"dress",s:"--upper:#15171c;--accent:#d4af37;--sole:#0b0c0f;--tex:.75;--gold:#d4af37"},
+ {n:"Formal Loafer Black",c:"Formal",col:"Black leather, gold buckle",p:6500,r:4.7,rv:73,b:"",sym:"loafer",s:"--upper:#15171c;--gold:#d4af37;--sole:#08090b"},
+ {n:"School Leather Black",c:"School",col:"Black leather, lace-up",p:3800,r:4.8,rv:420,b:"Best seller",sym:"dress",s:"--upper:#15171c;--accent:#fff;--sole:#0b0c0f"},
+ {n:"School Sports Black",c:"School",col:"Black / White, PT shoe",p:2900,r:4.7,rv:318,b:"New",s:"--upper:#15171c;--accent:#fff;--mid:#fff;--sole:#0b0c0f"},
+ {n:"Groom Patent Black",c:"Wedding",col:"Black patent, glossy",p:13500,r:4.9,rv:64,b:"New",sym:"dress",s:"--upper:#0c0d10;--accent:#d4af37;--sole:#050506;--gold:#d4af37"},
+ {n:"Ivory Sherwani Shoe",c:"Wedding",col:"Ivory / Gold",p:14900,r:4.9,rv:41,b:"",sym:"dress",s:"--upper:#f1e6cf;--accent:#c9a24a;--sole:#7a5c1e;--gold:#c9a24a"},
+ {n:"Oxford Classic",c:"Formal",col:"Brown leather",p:11500,r:4.8,rv:77,b:"",sym:"dress",s:"--upper:#6b4330;--accent:#e8d5c0;--sole:#1c120c"},
+ {n:"Derby Noir",c:"Formal",col:"Black leather",p:10900,r:4.7,rv:84,b:"",sym:"dress",s:"--upper:#1b1d24;--accent:#fff;--sole:#0b0c0f"},
+ {n:"Street Runner",c:"Sneakers",col:"White / Blue",p:6500,r:4.8,rv:212,b:"New",s:"--upper:#f5f6f8;--accent:#2748ff"},
+ {n:"Pink Cloud",c:"Sneakers",col:"Pink / White",p:5800,o:7200,r:4.7,rv:148,b:"Sale",s:"--upper:#f2b8c6;--accent:#fff;--sole:#3a2a30"},
+ {n:"Sprint Pro",c:"Sports",col:"Black / Yellow",p:8900,r:4.9,rv:301,b:"",s:"--upper:#1c1f27;--accent:#ffd23f;--mid:#2748ff;--sole:#10131a"},
+ {n:"Trail Grip",c:"Sports",col:"Green / Black",p:9400,o:11000,r:4.6,rv:96,b:"Sale",s:"--upper:#5fc47a;--accent:#10131a"}
+];
+const fmt=n=>"Rs "+n.toLocaleString("en-US");
+const grid=document.getElementById("grid");
+grid.innerHTML=shoes.map(x=>`
+<article class="card" data-c="${x.c}">
+ <div class="pic">${x.b?`<span class="badge ${x.b==="Sale"?"sale":""}">${x.b}</span>`:""}
+  <svg class="shoe" style="${x.s}" role="img" aria-label="${x.n}"><use href="#${x.sym||'shoe'}"/></svg></div>
+ <div class="info"><h3>${x.n}</h3><p class="meta">${x.c} · ${x.col}</p>
+  <div class="stars">★★★★★<small>${x.r} (${x.rv})</small></div>
+  <div class="row"><span class="price">${fmt(x.p)}${x.o?`<s>${fmt(x.o)}</s>`:""}</span><a class="add" target="_blank" rel="noopener" href="${wa('Hello, I want to order: '+x.n+' ('+fmt(x.p)+')')}">Order on WhatsApp</a></div></div>
+</article>`).join("");
+const btns=document.querySelectorAll(".filters button");
+btns.forEach(b=>b.addEventListener("click",()=>{
+ btns.forEach(o=>o.setAttribute("aria-pressed",o===b));
+ grid.querySelectorAll(".card").forEach(c=>c.classList.toggle("hidden",b.dataset.f!=="all"&&c.dataset.c!==b.dataset.f));
+}));
+document.getElementById("navwa").href=wa("Hello, I want to order shoes");
+document.getElementById("wafloat").href=wa("Hello, I want to ask about shoes");
+const f=document.getElementById("f");
+f.addEventListener("submit",e=>{e.preventDefault();const v=[...f.elements].slice(0,3).map(i=>i.value);window.open(wa("Name: "+v[0]+"\nPhone: "+v[1]+"\n"+v[2]),"_blank");});
+</script>
+</body>
+</html>
